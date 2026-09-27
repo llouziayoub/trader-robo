@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#131829;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0e1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFC107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="chartLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGradient)" stroke="url(#goldGradient)" stroke-width="4"/>
+
+  <!-- Robot Head -->
+  <g transform="translate(200, 180)">
+    <!-- Head -->
+    <rect x="-60" y="-60" width="120" height="100" rx="20" fill="none" stroke="url(#goldGradient)" stroke-width="3" filter="url(#glow)"/>
+
+    <!-- Eyes (Trading Chart Style) -->
+    <rect x="-45" y="-35" width="35" height="25" rx="5" fill="#00ff88" opacity="0.8"/>
+    <rect x="10" y="-35" width="35" height="25" rx="5" fill="#00ff88" opacity="0.8"/>
+
+    <!-- Chart Line in Eyes -->
+    <polyline points="-42,-30 -35,-22 -28,-28 -15,-15" fill="none" stroke="#0a0e1a" stroke-width="2"/>
+    <polyline points="13,-30 20,-15 27,-22 40,-30" fill="none" stroke="#0a0e1a" stroke-width="2"/>
+
+    <!-- Mouth (Speaker/Indicator) -->
+    <rect x="-30" y="10" width="60" height="8" rx="4" fill="url(#goldGradient)"/>
+    <rect x="-30" y="22" width="40" height="4" rx="2" fill="url(#goldGradient)" opacity="0.6"/>
+
+    <!-- Antenna -->
+    <line x1="0" y1="-60" x2="0" y2="-80" stroke="url(#goldGradient)" stroke-width="3"/>
+    <circle cx="0" cy="-85" r="6" fill="#00ff88" filter="url(#glow)"/>
+  </g>
+
+  <!-- Trading Chart Arrow (Up trend) -->
+  <g transform="translate(200, 270)">
+    <polyline points="-80,20 -50,5 -20,-10 10,-25 40,-15 70,-35"
+              fill="none" stroke="url(#chartLine)" stroke-width="4"
+              stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+
+    <!-- Arrow Up -->
+    <polygon points="70,-35 60,-25 80,-25" fill="url(#chartLine)" filter="url(#glow)"/>
+
+    <!-- Dots on chart -->
+    <circle cx="-80" cy="20" r="4" fill="#00ff88"/>
+    <circle cx="-50" cy="5" r="4" fill="#00ff88"/>
+    <circle cx="-20" cy="-10" r="4" fill="#FFD700"/>
+    <circle cx="10" cy="-25" r="4" fill="#FFD700"/>
+    <circle cx="40" cy="-15" r="4" fill="#FFD700"/>
+  </g>
+
+  <!-- Text: TRADER_ROBO -->
+  <text x="200" y="355" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="bold"
+        font-size="28" fill="url(#goldGradient)" letter-spacing="2">
+    TRADER_ROBO
+  </text>
+
+  <!-- Subtitle: EA v8.0 -->
+  <text x="200" y="378" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="normal"
+        font-size="14" fill="#a0aec0" letter-spacing="3">
+    EA v8.0
+  </text>
+
+  <!-- Decorative Corners -->
+  <g stroke="url(#goldGradient)" stroke-width="2" fill="none">
+    <path d="M 30,30 L 30,60 M 30,30 L 60,30"/>
+    <path d="M 370,30 L 370,60 M 370,30 L 340,30"/>
+    <path d="M 30,370 L 30,340 M 30,370 L 60,370"/>
+    <path d="M 370,370 L 370,340 M 370,370 L 340,370"/>
+  </g>
+</svg>
